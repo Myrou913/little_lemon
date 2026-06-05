@@ -1,6 +1,8 @@
-function Main() {
+import { Routes, Route } from "react-router-dom";
+
+function HomePage() {
   return (
-    <main className="main">
+    <>
       <section className="hero">
         <h1>Little Lemon</h1>
         <p>Mediterranean Restaurant</p>
@@ -25,6 +27,26 @@ function Main() {
         <h2>About Us</h2>
         <p>Restaurant description...</p>
       </section>
+    </>
+  );
+}
+
+function BookingPage() {
+  return (
+    <section className="booking">
+      <h1>Book a Table</h1>
+      <p>Reservation form will go here</p>
+    </section>
+  );
+}
+
+function Main() {
+  return (
+    <main className="main">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/reservations" element={<BookingPage />} />
+      </Routes>
     </main>
   );
 }
