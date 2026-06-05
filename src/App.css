@@ -234,3 +234,106 @@ button {
 button:hover {
   background-color: #e0b800;
 }
+
+/* =========================
+   BOOKING FORM
+========================= */
+
+.booking {
+  padding: 20px;
+}
+
+.booking form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 480px;
+}
+
+.booking label {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.booking input,
+.booking select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* =========================
+   RESERVATIONS TABLE
+========================= */
+
+.booking-table-wrapper {
+  margin-top: 40px;
+}
+
+.booking-table-wrapper h2 {
+  margin-bottom: 16px;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.booking-table th,
+.booking-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+}
+
+.booking-table thead {
+  background-color: #495e57;
+  color: #fff;
+}
+
+.booking-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.booking-table tbody tr:hover {
+  background-color: #fef9e7;
+}
+
+/* =========================
+   CONFIRMED BOOKING PAGE
+========================= */
+
+.confirmed-booking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.confirmed-booking__card {
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.confirmed-booking__icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.confirmed-booking__card h1 {
+  margin-bottom: 12px;
+}
+
+.confirmed-booking__card p {
+  margin-bottom: 28px;
+  color: #555;
+}
