@@ -1,51 +1,58 @@
 import { Routes, Route } from "react-router-dom";
+import { useReducer } from "react";
+import BookingForm from "./BookingForm";
 
 function HomePage() {
-  return (
-    <>
-      <section className="hero">
-        <h1>Little Lemon</h1>
-        <p>Mediterranean Restaurant</p>
-        <button>Reserve a Table</button>
-      </section>
-
-      <section className="highlights">
-        <h2>Weekly Specials</h2>
-        <div className="cards">
-          <div className="card">Dish 1</div>
-          <div className="card">Dish 2</div>
-          <div className="card">Dish 3</div>
-        </div>
-      </section>
-
-      <section className="testimonials">
-        <h2>Testimonials</h2>
-        <p>Customer reviews here...</p>
-      </section>
-
-      <section className="about">
-        <h2>About Us</h2>
-        <p>Restaurant description...</p>
-      </section>
-    </>
-  );
+  return <h1>Home Page</h1>;
 }
 
-function BookingPage() {
+// Initialize available times
+const initializeTimes = () => {
+  return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+};
+
+// Update available times
+const updateTimes = (state, action) => {
+  switch (action.type) {
+    case "UPDATE_TIMES":
+      return ["17:00", "18:00", "19:00", "20:00", "21:00"];
+    default:
+      return state;
+  }
+};
+
+function BookingPage({ availableTimes, dispatch }) {
   return (
     <section className="booking">
       <h1>Book a Table</h1>
-      <p>Reservation form will go here</p>
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatch={dispatch}
+      />
     </section>
   );
 }
 
 function Main() {
+  const [availableTimes, dispatch] = useReducer(
+    updateTimes,
+    [],
+    initializeTimes
+  );
+
   return (
     <main className="main">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/reservations" element={<BookingPage />} />
+        <Route
+          path="/reservations"
+          element={
+            <BookingPage
+              availableTimes={availableTimes}
+              dispatch={dispatch}
+            />
+          }
+        />
       </Routes>
     </main>
   );
