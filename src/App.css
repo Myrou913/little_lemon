@@ -1,38 +1,236 @@
-.App {
+/* Reset (important for consistency) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page container */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* HEADER */
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.header img {
+  height: 60px;
+  width: auto;
+}
+
+/* NAVIGATION */
+.nav {
+  grid-area: nav;
+  background: #f8f8f8;
+  padding: 10px;
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+/* MAIN */
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 40px;
+  background-color: #eee;
+  border-radius: 8px;
+}
+
+.hero button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* HIGHLIGHTS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 200px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* TESTIMONIALS */
+.testimonials {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ABOUT */
+.about {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 20px;
+  background: #222;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #495e57;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #495e57;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+h4, h5, h6 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+span {
+  font-size: 0.95rem;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  background-color: #edefee;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+nav li {
+  padding: 5px 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #f4ce14;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Logo specific (optional improvement) */
+.header img {
+  height: 60px;
+  width: auto;
+}
+
+/* =========================
+   BUTTONS (important for your app)
+========================= */
+
+button {
+  background-color: #f4ce14;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #e0b800;
 }
