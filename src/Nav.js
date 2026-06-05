@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav className="nav">
-      <ul>
+    <nav className="nav" aria-label="Main navigation">
+      <ul role="list">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/menu">Menu</Link></li>

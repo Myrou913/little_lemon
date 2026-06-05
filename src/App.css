@@ -337,3 +337,31 @@ button:hover {
   margin-bottom: 28px;
   color: #555;
 }
+
+/* =========================
+   FORM FIELD VALIDATION
+========================= */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"] {
+  border-color: #d32f2f;
+  outline-color: #d32f2f;
+}
+
+.field-error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f4ce14;
+}

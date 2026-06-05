@@ -9,7 +9,7 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
   }
 
   return (
-    <section className="booking">
+    <section className="booking" aria-label="Table reservation">
       <h1>Book a Table</h1>
 
       <BookingForm
@@ -21,15 +21,20 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
 
       {bookingData.length > 0 && (
         <div className="booking-table-wrapper">
-          <h2>Your Reservations</h2>
-          <table className="booking-table">
+          <h2 id="reservations-heading">Your Reservations</h2>
+          <table
+            className="booking-table"
+            aria-label="Reservations summary"
+            aria-describedby="reservations-heading"
+          >
+            <caption className="sr-only">List of your confirmed reservations</caption>
             <thead>
               <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Guests</th>
-                <th>Occasion</th>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Guests</th>
+                <th scope="col">Occasion</th>
               </tr>
             </thead>
             <tbody>

@@ -10,13 +10,18 @@ function HomePage() {
 
   return (
     <>
-      <section className="hero">
+      <section className="hero" aria-label="Hero section">
         <h1>Little Lemon</h1>
         <p>Mediterranean Restaurant</p>
-        <button onClick={() => navigate("/reservations")}>Reserve a Table</button>
+        <button
+          aria-label="On Click"
+          onClick={() => navigate("/reservations")}
+        >
+          Reserve a Table
+        </button>
       </section>
 
-      <section className="highlights">
+      <section className="highlights" aria-label="Weekly specials">
         <h2>Weekly Specials</h2>
       </section>
     </>
